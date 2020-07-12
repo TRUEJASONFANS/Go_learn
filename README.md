@@ -1,2 +1,2 @@
 # Go_learn
-an repo for learn go
+a repo to learn go

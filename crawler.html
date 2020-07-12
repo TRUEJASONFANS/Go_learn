@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:47293/uploader -->
+<html class="eye-protector-processed" style="background-color: rgb(193, 230, 198);"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Book Uploader</title>
+    <style type="text/css">
+        .inputData{
+            padding: 5px;
+        }
+
+        .inputData input{
+            margin-left: 9em;
+        }
+
+        .inputData input[type="text"]{
+            width: 50%;
+        }
+
+        .inputData input[type="password"]{
+            width: 50%;
+        }
+
+        .inputData label{
+            position: absolute;
+        }
+
+        .message {
+            margin-top: -30%;
+            margin-left: 70%;
+        }
+
+        .unclear{
+
+        }
+    </style>
+    <script>
+        function clearAllValues() {
+            var elements = document.getElementsByTagName("input");
+            for (var ii = 0; ii < elements.length; ii++) {
+                if (elements[ii].type === "text" && elements[ii].className !== "unclear") {
+                    elements[ii].value = "";
+                }
+            }
+        }
+
+        function checkBeforeUpload() {
+            var elements = document.getElementsByTagName("input");
+            for (var ii = 0; ii < elements.length; ii++) {
+                if (elements[ii].value === "") {
+                    alert("Please Fill out the form")
+                    return false
+                }
+            }
+            return true
+        }
+    </script>
+</head>
+<body class="eye-protector-processed" style="background-color: rgb(193, 230, 198); transition: background-color 0.3s ease 0s;">
+<h1>Book Uploader</h1>
+<div>
+<div>
+<form id="input_form" class="inputData" action="http://127.0.0.1:47293/uploader" method="post" name="input_form">
+    <p>
+        <label for="isbn" style="position: absolute">ISBN</label>
+        <input id="isbn" type="text" name="ISBN" value="9787302423287" style="width: 50%;margin-left: 9em">
+        <button type="submit" name="submit" value="check" style="margin-left: 2em;">check</button>
+    </p>
+
+    <p>
+        <label for="url">URL</label>
+        <input id="url" type="text" name="url" value="https://tramweb.asml.com/book" class="unclear">
+    </p>
+    <p>
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" value="" class="unclear">
+    </p>
+
+    <p>
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" value="" class="unclear">
+    </p>
+
+    <p>
+        <label for="ID">ID</label>
+        <input id="ID" type="text" name="ID" value="">
+    </p>
+    <p>
+        <label for="owner">OwnerEmail</label>
+        <input id="owner" type="text" name="owner" value="ASML">
+    </p>
+
+    <p>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" value="机器学习">
+    </p>
+    <p>
+        <label for="author">Author</label>
+        <input id="author" type="text" name="author" value="周志华">
+    </p>
+    <p>
+        <label for="publisher">Publisher</label>
+        <input id="publisher" type="text" name="publisher" value="清华大学出版社">
+    </p>
+
+    <p><img src="./uploader_files/23898620-1_b_3.jpg" alt="Couldn&#39;t find image."/> (If image doesn't show, please refresh)</p>
+
+    <p>
+        <label for="image_link"></label>
+        <input id="image_link" type="text" name="image_link" value="http://img3m0.ddimg.cn/20/24/23898620-1_b_3.jpg" hidden="">
+    </p>
+
+    <p>
+        <label for="price">Price</label>
+        <input id="price" type="text" name="price" value="88">
+    </p>
+
+    <p>
+        <a href="http://product.dangdang.com/23898620.html" style="position: absolute;" target="_blank">Link</a>
+        <input id="link" type="text" name="link" value="http://product.dangdang.com/23898620.html">
+    </p>
+
+    <p>
+        <label for="category">Category</label>
+        <input id="category" type="radio" name="category" value="1" checked="">Computer
+    </p>
+
+    <p>
+        <button style="width: 70px" type="submit" name="submit" value="upload" onclick="return checkBeforeUpload()">upload</button>
+        <button style="width: 70px; margin-left: 1em" type="button" name="clear" value="clear" onclick="clearAllValues()">clear</button>
+    </p>
+</form>
+</div>
+
+<div class="message">
+    <h3>Messages</h3>
+
+    <ul>
+        
+            <li style="color: red;">Checked Successfully</li>
+        
+    </ul>
+
+</div>
+</div>
+
+
+
+</body></html>
